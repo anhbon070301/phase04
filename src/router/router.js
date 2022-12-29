@@ -6,7 +6,7 @@ import TestVue from '@/views/test1.vue';
 const routes = [
 
     { path: '/', component: SearchVue },
-    { path: '/Test', component: TestVue },
+    { path: '/Test/:id', component: TestVue },
 ]
 
 const router = createRouter({

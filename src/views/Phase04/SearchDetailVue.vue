@@ -1,5 +1,12 @@
 <template>
-  <div class="mt-4 ml-4">
+  <div>
+   <div class="search-title">
+          <span>詳細検索項目</span> &emsp14;
+          <el-button @click="showSearchDetail" size="medium">+</el-button>
+          <el-button @click="hideSearchDetail" size="medium">-</el-button>
+    </div>
+    <br />
+  <div style="margin-left: 3%;" v-show="this.showDetail" class="mt-4 ml-4">
     <el-form ref="filterForm" label-position="left" label-width="100px">
       <div class="T18M_26">表示データ</div>
       <el-row class="ml-4">
@@ -228,6 +235,7 @@
       <!--      </el-row>-->
     </el-form>
   </div>
+</div>
 </template>
 <script>
 export default {
@@ -237,6 +245,7 @@ export default {
 
   data() {
     return {
+      showDetail: false,
       model: {
         check: 1
       },
@@ -257,7 +266,14 @@ export default {
     };
   },
 
-  methods: {}
+  methods: {
+    showSearchDetail() {
+      this.showDetail = true;
+    },
+    hideSearchDetail() {
+      this.showDetail = false;
+    }
+  }
 };
 </script>
 
